@@ -20,9 +20,11 @@
                         </div>
                         <p>❤️ * #{tweet.likes}</p>
                         <h:form>
-                            <h:commandButton value="❤️" />
-                            <h:commandButton value="Delete" />
-                            <h:link outcome=""
+                            <div><h:commandButton value="❤️" /></div>
+                            <div><h:commandButton action="#{tweetsService.deleteTweet(tweet.id)}" value="Delete" /></div>
+                            <h:link outcome="update-tweet.xhtml" value="Edit">
+                                <f:param name="id" id="id" value="#{tweet.id}" />
+                            </h:link>
                         </h:form>
                     </div>
                 </div>

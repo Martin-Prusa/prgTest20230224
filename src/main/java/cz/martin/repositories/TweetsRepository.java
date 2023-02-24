@@ -57,4 +57,19 @@ public class TweetsRepository {
 
         return tweets;
     }
+
+    public void deleteTweet(int id) {
+        try (
+                Connection connection = DriverManager.getConnection(databaseURL);
+                PreparedStatement statement = connection.prepareStatement("""
+                DELETE FROM tweets
+                WHERE tweet_id = ?
+                """);
+        ) {
+            statement.setInt(1, id);
+            statement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

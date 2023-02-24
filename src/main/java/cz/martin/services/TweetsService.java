@@ -18,6 +18,9 @@ public class TweetsService {
         this.tweetsRepository.createTweet(tweet);
     }
 
+    public void deleteTweet(int id) {
+        this.tweetsRepository.deleteTweet(id);
+    }
     public List<Tweet> getTweets() {
         return this.tweetsRepository.getTweets();
     }
