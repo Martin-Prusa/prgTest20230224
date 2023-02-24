@@ -81,8 +81,10 @@ public class TweetsRepository {
                 PreparedStatement statement = connection.prepareStatement("""
                 SELECT tweet_id, content, author, likes, created_at, updated_at
                 FROM tweets
+                WHERE tweet_id = ?
                 """);
         ) {
+            statement.setInt(1, id);
             try (
                     ResultSet rs = statement.executeQuery()
             ) {

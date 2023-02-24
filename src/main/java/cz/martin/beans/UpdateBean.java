@@ -30,6 +30,7 @@ public class UpdateBean implements Serializable {
 
     public Tweet getEditedTweet() {
         int id = getId();
+        System.out.println(id);
         if(editedTweet == null || editedTweet.getId() != id) editedTweet = tweetsService.getTweetById(id);
         return editedTweet;
     }
