@@ -124,17 +124,16 @@ public class TweetsRepository {
         }
     }
 
-    public void like(int tweetId, int count) {
+    public void like(int tweetId) {
         try (
                 Connection connection = DriverManager.getConnection(databaseURL);
                 PreparedStatement statement = connection.prepareStatement("""
                 UPDATE tweets
-                SET likes = ?
+                SET likes = likes + 1
                 WHERE tweet_id = ?
                 """);
         ) {
-            statement.setInt(1, count);
-            statement.setInt(2, tweetId);
+            statement.setInt(1, tweetId);
             statement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
