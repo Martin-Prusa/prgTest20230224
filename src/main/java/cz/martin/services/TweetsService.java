@@ -22,6 +22,10 @@ public class TweetsService {
         return this.tweetsRepository.getTweetById(id);
     }
 
+    public void like(int tweetId, int count) {
+        this.tweetsRepository.like(tweetId, count+1);
+    }
+
     public void editTweet(Tweet tweet) {
         this.tweetsRepository.editTweet(tweet);
     }

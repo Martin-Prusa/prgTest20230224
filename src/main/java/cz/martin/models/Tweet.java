@@ -25,10 +25,6 @@ public class Tweet {
         this.likes = 0;
     }
 
-    public void like() {
-        this.likes++;
-    }
-
     public void setContent(String content) {
         this.content = content;
     }
