@@ -11,14 +11,16 @@
       <h:form>
          <div class="my-3">
             <label for="author" class="form-label">Author</label>
-            <h:inputText type="text" value="#{newTweetBean.newTweet.author}" class="form-control" id="author" />
+            <h:inputText type="text" value="#{updateBean.editedTweet.author}" class="form-control" id="author" />
          </div>
          <div class="mb-3">
             <label for="content" class="form-label">Author</label>
-            <h:inputTextarea type="text" value="#{newTweetBean.newTweet.content}" class="form-control" id="content"/>
+            <h:inputTextarea type="text" value="#{updateBean.editedTweet.content}" class="form-control" id="content"/>
          </div>
          <div class="mb-3">
-            <h:commandButton action="#{newTweetBean.createNewTweet()}" value="Update Tweet" />
+            <h:commandButton action="#{updateBean.edit()}" value="Update Tweet" >
+               <f:param name="id" id="id" value="#{updateBean.editedTweet.id}" />
+            </h:commandButton>
          </div>
       </h:form>
    </ui:define>

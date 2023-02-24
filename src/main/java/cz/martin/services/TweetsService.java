@@ -18,6 +18,14 @@ public class TweetsService {
         this.tweetsRepository.createTweet(tweet);
     }
 
+    public Tweet getTweetById(int id) {
+        return this.tweetsRepository.getTweetById(id);
+    }
+
+    public void editTweet(Tweet tweet) {
+        this.tweetsRepository.editTweet(tweet);
+    }
+
     public void deleteTweet(int id) {
         this.tweetsRepository.deleteTweet(id);
     }
